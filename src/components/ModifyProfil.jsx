@@ -1,65 +1,51 @@
 import React from "react";
+import "../style/modifyProfil.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function ModifyProfil() {
   return (
     <div>
-      <div id="contacts" class="bg-light">
-        <div class="container-md">
-          <div class="text-center">
-            <Navbar />
-            <h2>Modifier votre profil</h2>
+      <Navbar />
+      <div class="container-md mt-5 col-lg-4">
+        <h1 id="modif">Modifier mon profil</h1>
+        <form class="row  justify-content-center">
+          <div class="form-group">
+            <label for="nom">Entrez votre nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              placeholder="..."
+            />
           </div>
 
-          <div class="row  justify-content-center">
-            <div class="col-lg-4">
-              <label for="Nom" class="form-label" type="text">
-                Votre prénom
-              </label>
-              <input
-                type="text"
-                class="form-control form-control "
-                placeholder="EX: Sofiane,Dorian.."
-              />
+          <div class="form-group">
+            <label for="email">Entrez votre prénom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="prenom"
+              placeholder="..."
+            />
+          </div>
 
-              <label for="Nom" class="form-label" type="text">
-                Votre Nom
-              </label>
-              <input type="text" class="form-control" placeholder="...." />
-
-              <label for="email" class="form-label mt-3">
-                Veuillez entrez votre email
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="EX: exemple@exemple.com"
-              />
-
-              <label for="mot de passe" class="form-label mt-2">
-                Votre mot de passe
-              </label>
-              <input type="mdp" class="form-control" place-holder="" />
-
-              <label for="commentaire" class="form-label" type="text">
-                A propos de moi
-                <textarea
-                  name="comments"
-                  id="comments"
-                  cols="45"
-                  rows="05"
-                ></textarea>
-              </label>
-
-              <div class="text">
-                <button class="btn btn-outline-dark border-light shadow-lg rounded">
-                  Modifier
-                </button>
-              </div>
+          <div class="form-group">
+            <label for="image">Changer photo de profil</label>
+            <div>
+              <input type="file" id="file" name="file" accept="image/*" />
             </div>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="bio">A propos</label>
+            <textarea class="form-control" id="bio" rows="3"></textarea>
+          </div>
+          <div class="text-center mt-3 ">
+            <button class="btn btn-outline-primary border-light shadow-lg rounded">
+              Modifier
+            </button>
+          </div>
+        </form>
       </div>
       <Footer />
     </div>

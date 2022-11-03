@@ -1,19 +1,118 @@
-ul {
-  list-style-type: none;
-  margin: 0;
+/* * {
+  box-sizing: border-box;
+} */
+
+a {
+  border: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+  font-family: Kaisei Tokuminsans-serif;
+  color: #f1faee;
+  cursor: pointer;
   text-decoration: none;
 }
+.navbar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 85px;
+  background: #23645e;
+  color: #f9f9f9;
+  font-family: Kaisei Tokuminsans-serif;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 0 0 16px;
+  }
+}
+.navbar-overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 00.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+body.open .navbar-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+@media only screen and (min-width: 600px) {
+  .navbar-overlay {
+    display: none;
+  }
+}
+
+.navbar-burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-burger {
+    display: none;
+  }
+}
+.navbar-title {
+  font-family: Kaisei Tokumin;
+  margin: 0;
+  font-size: 35px;
+}
+.navbar-menu {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  translate: -100% 0;
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  transition: translate 0.3s;
+}
+body.open .navbar-menu {
+  translate: 0 0;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-menu {
+    position: static;
+    translate: 00;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    visibility: visible;
+  }
+}
+
+/* .navbar-menu > a {
+  color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  padding: 0 8px;
+} */
+/* .navbar-menu > a.active {
+  color: inherit;
+} */

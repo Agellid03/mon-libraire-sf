@@ -1,28 +1,41 @@
-import React, { useRef } from "react";
-import Footer from "../components/Footer";
+import React from "react";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function SignIn() {
   //State & Données
-  const inputRef = useRef();
 
   //Comportements
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // alert("handleSubmit");
-    console.log(inputRef.current.value);
-  };
 
   return (
-    <div>
-      <Navbar />
-      <div>
-        <form action="submit" onSubmit={handleSubmit}>
-          <input ref={inputRef} type="text" placeholder="Connectez-vous!" />
-          <button>Connectez-vous ! </button>
-        </form>
+    <div class="container-md mt-5">
+      <div class="text-center mt-5">
+        <Navbar />
       </div>
-      <Footer />
+      <h2>Inscrivez-vous ! </h2>
+      <div class="row mt-5 justify-content-center">
+        <h2 class="row justify-content-center ">Connectez-vous!</h2>
+        <div class="col-lg-4 mt-5">
+          <label for="email" class="form-label mt-3">
+            Veuillez entrez votre email
+          </label>
+          <input type="text" class="form-control" placeholder="" />
+
+          <label for="mot de passe" class="form-label mt-2">
+            Votre mot de passe
+          </label>
+          <input type="mot de passe" class="form-control" place-holder="" />
+
+          <div class="text-end mt-3">
+            <button class="btn btn-outline-primary border-light shadow-lg rounded">
+              Se connecter
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

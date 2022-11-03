@@ -1,15 +1,9 @@
-import "./App.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-function App() {
+import React from "react";
+import SignUp from "./components/SignUp";
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-      </header>
-      <footer>
-        <Footer />
-      </footer>
+    <div>
+      <SignUp />
     </div>
   );
 }

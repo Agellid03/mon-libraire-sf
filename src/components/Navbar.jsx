@@ -4,33 +4,28 @@ import "../style/navbar.css";
 function Navbar() {
   //State et Datas
 
-  //Comportements
+  // Comportements
+  const toggleMenuOpen = () => {
+    document.body.classList.toggle("open");
+  };
 
-  //Render
+  //render
   return (
-    <div id="nav">
-      <ul className="navbar">
-        <li>
-          <a id="logo" href="#z">
-            Mon libraire SF
+    <div>
+      <body>
+        <nav class="navbar">
+          <div class="navbar-overlay" onClick={toggleMenuOpen()}></div>
+          <a href="#z" class="navbar-burger" onClick={toggleMenuOpen()}>
+            <span class="materials-icon">Menu</span>
           </a>
-        </li>
-        <li>
-          <a className="navbar-brand" href="z#">
-            A propos de nous
-          </a>
-        </li>
-        <li>
-          <a className="navbar-brand" href="../SignUp.jsx">
-            Inscritpion
-          </a>
-        </li>
-        <li>
-          <a className="navbar-brand" href="z#">
-            Se connecter
-          </a>
-        </li>
-      </ul>
+          <h1 class="navbar-title">Mon libraire SF</h1>
+          <nav class="navbar-menu">
+            <a href="#z">A propos de nous</a>
+            <a href="#a">Se connecter</a>
+            <a href="#z">Inscription</a>
+          </nav>
+        </nav>
+      </body>
     </div>
   );
 }

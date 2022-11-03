@@ -11,7 +11,7 @@ function Footer() {
           <a href="#f">Mentions légales</a>
         </li>
         <li>
-          <a href="f#"> Conditions générales</a>
+          <a href="f#">Conditions générales</a>
         </li>
       </ul>
     </div>
