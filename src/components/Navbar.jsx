@@ -1,33 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import "../style/navbar.css";
-
-function Navbar() {
-  //State et Datas
-
-  // Comportements
-  const toggleMenuOpen = () => {
-    document.body.classList.toggle("open");
-  };
-
-  //render
+const Navbar = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <div>
-      <body>
-        <nav class="navbar">
-          <div class="navbar-overlay" onClick={toggleMenuOpen()}></div>
-          <a href="#z" class="navbar-burger" onClick={toggleMenuOpen()}>
-            <span class="materials-icon">Menu</span>
-          </a>
-          <h1 class="navbar-title">Mon libraire SF</h1>
-          <nav class="navbar-menu">
-            <a href="#z">A propos de nous</a>
-            <a href="#a">Se connecter</a>
-            <a href="#z">Inscription</a>
-          </nav>
-        </nav>
-      </body>
-    </div>
+    <BrowserRouter>
+      <nav className="navigation">
+        <a href="/" className="brand-name">
+          Mon Libraire SF
+        </a>
+        <button
+          className="hamburger"
+          onClick={() => {
+            setIsNavExpanded(!isNavExpanded);
+          }}
+        ></button>
+        <div
+          className={
+            isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+          }
+        >
+          <ul>
+            <li>
+              <a href="/home">Home</a>
+            </li>
+            <li>
+              <a href="/about">A propos</a>
+            </li>
+            <li>
+              <a href="/signIn">Inscription</a>
+            </li>
+            <li>
+              <a href="signUp">Se connecter</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </BrowserRouter>
   );
-}
+};
 
 export default Navbar;

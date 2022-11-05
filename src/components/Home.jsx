@@ -5,17 +5,13 @@ import Navbar from "./Navbar";
 function Home() {
   return (
     <div className="container">
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <p>
         Nous avons différentes façons d'esquiver la réalité. Si on nous
         obligeait à l'affronter à chaque instant de la journée, nous
         deviendrions tous fous. Frank Herbert La Mort blanche .
       </p>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
