@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <div>
           <Routes>
-            <Route exact path="/Home" element={<Home />} />
+            <Route exact path="" element={<Home />} />
             <Route path="/SignIn" element={<SignUp />} />
             <Route path="/SignUp" element={<SignIn />} />
             <Route path="/Basket" element={<Basket />} />
